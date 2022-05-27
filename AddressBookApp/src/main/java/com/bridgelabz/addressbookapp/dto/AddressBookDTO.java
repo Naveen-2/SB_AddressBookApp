@@ -1,6 +1,8 @@
 package com.bridgelabz.addressbookapp.dto;
 
-public class AddressBookDTO {
+import lombok.Data;
+
+public @Data class AddressBookDTO {
 	
 	public String firstName;
     public String lastName;
@@ -11,29 +13,4 @@ public class AddressBookDTO {
     public String phoneNumber;
     public String zipCode;
 
-    public AddressBookDTO(String firstName, String lastName, String address, String city,
-                          String state, String email, String phoneNumber, String zipCode) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.zipCode = zipCode;
-    }
-
-    @Override
-    public String toString() {
-        return "AddressBookDTO{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", zipCode='" + zipCode + '\'' +
-                '}';
-    }
 }
