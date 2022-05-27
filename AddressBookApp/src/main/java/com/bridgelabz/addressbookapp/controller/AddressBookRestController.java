@@ -22,7 +22,7 @@ public class AddressBookRestController {
 	@Autowired
 	private IAddressBookService iAddressBookService;
 	
-	 @RequestMapping(value = {"", "/"})
+	 	@RequestMapping(value = {"", "/"})
 	    public ResponseEntity<ResponseDTO> getAddressBookData() {
 	        List<AddressBookData> addressBookDataList = iAddressBookService.getAddressBookData();
 	        ResponseDTO responseDTO = new ResponseDTO("Get Call Success", addressBookDataList);
