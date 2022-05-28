@@ -33,7 +33,7 @@ public @ToString class AddressBookDTO {
     public String email;
 
     @NotEmpty(message = "Phone number cannot be empty")
-    @Pattern(regexp = "^(\\d{1,2}[-]{1}){1}\\d{10}$", message = "Invalid phone number")
+    @Pattern(regexp = "((\\+*)((0[ -]*)*|((91 )*))((\\d{12})+|(\\d{10})+))|\\d{5}([- ]*)\\d{6}", message = "Invalid phone number")
     public String phoneNumber;
 
     @NotEmpty(message = "Zip code cannot be empty")
