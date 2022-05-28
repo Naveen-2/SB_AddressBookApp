@@ -14,6 +14,8 @@ import com.bridgelabz.addressbookapp.service.IAddressBookService;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/addressbook")
 public class AddressBookRestController {
@@ -37,7 +39,7 @@ public class AddressBookRestController {
 	    }
 
 	    @PostMapping("/create")
-	    public ResponseEntity<ResponseDTO> createAddressBookData(@RequestBody AddressBookDTO addressBookDTO) {
+	    public ResponseEntity<ResponseDTO> createAddressBookData(@Valid @RequestBody AddressBookDTO addressBookDTO) {
 	        AddressBookData addressBookData = iAddressBookService.createAddressBookData(addressBookDTO);
 	        ResponseDTO responseDTO = new ResponseDTO("Created Address Book data", addressBookData);
 	        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
@@ -45,7 +47,7 @@ public class AddressBookRestController {
 
 	    @PutMapping("/update/{contactId}")
 	    public ResponseEntity<ResponseDTO> updateAddressBookData(@PathVariable("contactId") int contactId,
-	                                                             @RequestBody AddressBookDTO addressBookDTO) {
+	                                                             @Valid @RequestBody AddressBookDTO addressBookDTO) {
 	        AddressBookData addressBookData = iAddressBookService.updateAddressBookData(contactId, addressBookDTO);
 	        ResponseDTO responseDTO = new ResponseDTO("Updated Address Book data for Id", addressBookData);
 	        return new ResponseEntity<ResponseDTO>(responseDTO, HttpStatus.OK);
