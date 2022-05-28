@@ -53,4 +53,14 @@ public class AddressBookService implements IAddressBookService{
         addressBookRepository.delete(addressBookData);
         
     }
+    
+    @Override
+    public List<AddressBookData> sortByCity() {
+        return addressBookRepository.sortByCity();
+    }
+
+    @Override
+    public List<AddressBookData> sortByState() {
+        return addressBookRepository.sortByState();
+    }
 }
